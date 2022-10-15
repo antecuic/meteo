@@ -39,6 +39,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+
+  cursor: pointer;
+}
+
+.result:hover {
+  background-color: rgb(244, 238, 238);
 }
 
 .star {

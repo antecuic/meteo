@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import City from "types/City";
 import cities from "../../gradovi.json";
 import { AiFillStar } from "react-icons/ai";
+import Link from "next/link";
 
 import styles from "./CitiesSearch.module.css";
 
@@ -39,19 +40,24 @@ function CitiesSearch({ favourites, handleStarClick }: Props) {
       {searchResults.length > 0 ? (
         <div className={styles.searchResults}>
           {searchResults.map((city) => (
-            <div className={styles.result} key={city.name}>
-              <p>{city.name}</p>
-              <AiFillStar
-                onClick={() => handleStarClick(city)}
-                size={20}
-                className={styles.star}
-                fill={
-                  favourites.some((fav) => fav.name === city.name)
-                    ? "#1d71f2"
-                    : undefined
-                }
-              />
-            </div>
+            <Link
+              key={city.name}
+              href={`/details?name=${city.name}&longitude=${city.lng}&latitude=${city.lat}`}
+            >
+              <a className={styles.result}>
+                <p>{city.name}</p>
+                <AiFillStar
+                  onClick={() => handleStarClick(city)}
+                  size={20}
+                  className={styles.star}
+                  fill={
+                    favourites.some((fav) => fav.name === city.name)
+                      ? "#1d71f2"
+                      : undefined
+                  }
+                />
+              </a>
+            </Link>
           ))}
         </div>
       ) : null}

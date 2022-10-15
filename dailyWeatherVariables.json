@@ -1,0 +1,38 @@
+[
+  {
+    "value": "weathercode",
+    "label": "Weathercode"
+  },
+  {
+    "value": "temperature_2m_max",
+    "label": "Maximum Temperature (2 m)"
+  },
+  {
+    "value": "temperature_2m_min",
+    "label": "Minimum Temperature (2 m)"
+  },
+  {
+    "value": "sunrise",
+    "label": "Sunrise"
+  },
+  {
+    "value": "sunset",
+    "label": "Sunset"
+  },
+  {
+    "value": "precipitation_sum",
+    "label": "Precipitation Sum"
+  },
+  {
+    "value": "rain_sum",
+    "label": "Rain Sum"
+  },
+  {
+    "value": "showers_sum",
+    "label": "Showers Sum"
+  },
+  {
+    "value": "Snowfall_sum",
+    "label": "Snowfall Sum"
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "value": "temperature_2m",
+    "label": "Temperature (2 m)"
+  },
+  {
+    "value": "relativehumidity_2m",
+    "label": "Relative Humidity (2 m)"
+  },
+  {
+    "value": "dewpoint_2m",
+    "label": "Dewpoint (2 m)"
+  },
+  {
+    "value": "weathercode",
+    "label": "Weathercode"
+  },
+  {
+    "value": "pressure_msl",
+    "label": "Sealevel Pressure"
+  },
+  {
+    "value": "surface_pressure",
+    "label": "Surface Pressure"
+  },
+  {
+    "value": "windspeed_10m",
+    "label": "Wind Speed (10 m)"
+  },
+  {
+    "value": "windspeed_80m",
+    "label": "Wind Speed (80 m)"
+  },
+  {
+    "value": "windspeed_120m",
+    "label": "Wind Speed (120 m)"
+  },
+
+  {
+    "value": "soil_temperature_0cm",
+    "label": "Soil Temperature (0 cm)"
+  },
+  {
+    "value": "soil_temperature_6cm",
+    "label": "Soil Temperature (6 cm)"
+  },
+  {
+    "value": "soil_temperature_18cm",
+    "label": "Soil Temperature (18 cm)"
+  }
+]
