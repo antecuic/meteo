@@ -1,3 +1,5 @@
+import Data from "types/Data";
+
 export interface Params {
   [key: string]: string;
 }
@@ -14,5 +16,5 @@ export const fetchMeteoData = async (params: Params) => {
   const res = await fetch(fetchUrl);
 
   const data = await res.json();
-  return data;
+  return data as Data;
 };

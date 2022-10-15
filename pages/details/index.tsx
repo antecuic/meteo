@@ -8,12 +8,13 @@ import useFavourites from "hooks/useFavourites";
 import City from "types/City";
 import hourlyVariables from "../../hourlyWeatherVariables.json";
 import dailyVariables from "../../dailyWeatherVariables.json";
+import Data from "types/Data";
 
 import styles from "./index.module.css";
 
 interface Props {
   city: City;
-  meteoData: any;
+  meteoData: Data;
 }
 type CurrentView = "daily" | "hourly";
 
