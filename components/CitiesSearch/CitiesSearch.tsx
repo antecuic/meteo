@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import City from "types/City";
 import cities from "../../gradovi.json";
+import { AiFillStar } from "react-icons/ai";
 
 import styles from "./CitiesSearch.module.css";
 
-function CitiesSearch() {
+interface Props {
+  favourites: City[];
+  handleStarClick: (city: City) => void;
+}
+
+function CitiesSearch({ favourites, handleStarClick }: Props) {
   const [searchResults, setSearchResults] = useState<City[]>([]);
 
   const searchCities = ({
@@ -16,7 +22,7 @@ function CitiesSearch() {
     }
 
     const results = cities
-      .filter((city) => city.city.toLowerCase().includes(value.toLowerCase()))
+      .filter((city) => city.name.toLowerCase().includes(value.toLowerCase()))
       .slice(0, 5);
 
     setSearchResults(results);
@@ -32,12 +38,23 @@ function CitiesSearch() {
       />
       {searchResults.length > 0 ? (
         <div className={styles.searchResults}>
-          {searchResults.map((city) => (
-            <div className={styles.result} key={city.city}>
-              <p>{city.city}</p>
-              <p>icon</p>
-            </div>
-          ))}
+          {searchResults.map((city) => {
+            const isFavourite =
+              favourites.findIndex(
+                (favourite) => city.name === favourite.name
+              ) !== -1;
+            return (
+              <div className={styles.result} key={city.name}>
+                <p>{city.name}</p>
+                <AiFillStar
+                  onClick={() => handleStarClick(city)}
+                  size={20}
+                  className={styles.star}
+                  fill={isFavourite ? "#1d71f2" : undefined}
+                />
+              </div>
+            );
+          })}
         </div>
       ) : null}
     </div>

@@ -7,19 +7,15 @@
 .input {
   width: 100%;
 
-  border: 2px solid grey;
+  border: 2px solid var(--light-blue);
   border-radius: 5px;
   outline: none;
 
   padding: 0.5rem;
 }
 
-.input:focus {
-  border-width: 2px;
-  border-color: var(--light-blue);
-}
-
-.input:focus ~ .searchResults {
+.input:focus ~ .searchResults,
+.searchResults:hover {
   display: block;
 }
 
@@ -43,4 +39,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+}
+
+.star {
+  cursor: pointer;
 }
