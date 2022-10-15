@@ -14,7 +14,7 @@ export default function Home() {
         <title>Meteo</title>
       </Head>
       <main className={styles.main}>
-        <Sidebar favourites={favourites} />
+        <Sidebar favourites={favourites} handleStarClick={toggleFavourite} />
         <div className={styles.content}>
           <h1 className={styles.heading}>Meteo App</h1>
           <CitiesSearch

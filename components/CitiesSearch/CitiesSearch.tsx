@@ -38,23 +38,21 @@ function CitiesSearch({ favourites, handleStarClick }: Props) {
       />
       {searchResults.length > 0 ? (
         <div className={styles.searchResults}>
-          {searchResults.map((city) => {
-            const isFavourite =
-              favourites.findIndex(
-                (favourite) => city.name === favourite.name
-              ) !== -1;
-            return (
-              <div className={styles.result} key={city.name}>
-                <p>{city.name}</p>
-                <AiFillStar
-                  onClick={() => handleStarClick(city)}
-                  size={20}
-                  className={styles.star}
-                  fill={isFavourite ? "#1d71f2" : undefined}
-                />
-              </div>
-            );
-          })}
+          {searchResults.map((city) => (
+            <div className={styles.result} key={city.name}>
+              <p>{city.name}</p>
+              <AiFillStar
+                onClick={() => handleStarClick(city)}
+                size={20}
+                className={styles.star}
+                fill={
+                  favourites.some((fav) => fav.name === city.name)
+                    ? "#1d71f2"
+                    : undefined
+                }
+              />
+            </div>
+          ))}
         </div>
       ) : null}
     </div>
