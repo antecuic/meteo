@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import Link from "next/link";
+import React, { useMemo, useState } from "react";
 import cn from "clsx";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
@@ -13,8 +14,19 @@ interface Props {
   handleStarClick: (city: City) => void;
 }
 
+type Sort = "ASC" | "DESC";
+
 function Sidebar({ favourites, handleStarClick }: Props) {
+  const [sort, setSort] = useState<Sort>("ASC");
   const [showSidebar, setShowSidebar] = useState(false);
+
+  const sortedFavourites = useMemo(() => {
+    return favourites.sort((a, b) => {
+      const isAsc = sort === "ASC";
+      const order = a.name.localeCompare(b.name);
+      return isAsc ? order : -order;
+    });
+  }, [favourites, sort]);
 
   return (
     <>
@@ -29,11 +41,25 @@ function Sidebar({ favourites, handleStarClick }: Props) {
           className={styles.close}
           onClick={() => setShowSidebar(false)}
         />
-        <h2>Favourites</h2>
-        <div className={styles.favouriteContainer}>
-          {favourites.map((city) => (
+        <div className={styles.heading}>
+          <h2>Favourites</h2>
+          <p
+            className={styles.sort}
+            onClick={() =>
+              setSort((prevState) => (prevState === "ASC" ? "DESC" : "ASC"))
+            }
+          >
+            Sort: <span>{sort}</span>
+          </p>
+        </div>
+        <div className={styles.favouriteContent}>
+          {sortedFavourites.map((city) => (
             <div key={city.name} className={styles.favourite}>
-              <p className={styles.favouriteName}>{city.name}</p>
+              <Link
+                href={`/details?name=${city.name}&longitude=${city.lng}&latitude=${city.lat}`}
+              >
+                <a className={styles.favouriteName}>{city.name}</a>
+              </Link>
               <AiFillStar
                 onClick={() => handleStarClick(city)}
                 size={20}

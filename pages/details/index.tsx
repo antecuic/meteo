@@ -50,7 +50,7 @@ export default function Details({ city, meteoData }: Props) {
   return (
     <>
       <Head>
-        <title>Meteo for {city.name}</title>
+        <title>Meteo Details</title>
       </Head>
       <main className={styles.main}>
         <Sidebar favourites={favourites} handleStarClick={toggleFavourite} />

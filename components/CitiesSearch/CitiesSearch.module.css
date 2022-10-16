@@ -38,9 +38,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
 
   cursor: pointer;
+}
+
+.resultLink {
+  width: 100%;
+  padding: 0.5rem;
 }
 
 .result:hover {
@@ -49,4 +53,5 @@
 
 .star {
   cursor: pointer;
+  margin-right: 0.5rem;
 }

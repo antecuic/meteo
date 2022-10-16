@@ -40,24 +40,24 @@ function CitiesSearch({ favourites, handleStarClick }: Props) {
       {searchResults.length > 0 ? (
         <div className={styles.searchResults}>
           {searchResults.map((city) => (
-            <Link
-              key={city.name}
-              href={`/details?name=${city.name}&longitude=${city.lng}&latitude=${city.lat}`}
-            >
-              <a className={styles.result}>
-                <p>{city.name}</p>
-                <AiFillStar
-                  onClick={() => handleStarClick(city)}
-                  size={20}
-                  className={styles.star}
-                  fill={
-                    favourites.some((fav) => fav.name === city.name)
-                      ? "#1d71f2"
-                      : undefined
-                  }
-                />
-              </a>
-            </Link>
+            <div className={styles.result}>
+              <Link
+                key={city.name}
+                href={`/details?name=${city.name}&longitude=${city.lng}&latitude=${city.lat}`}
+              >
+                <a className={styles.resultLink}>{city.name}</a>
+              </Link>
+              <AiFillStar
+                onClick={() => handleStarClick(city)}
+                size={20}
+                className={styles.star}
+                fill={
+                  favourites.some((fav) => fav.name === city.name)
+                    ? "#1d71f2"
+                    : undefined
+                }
+              />
+            </div>
           ))}
         </div>
       ) : null}
