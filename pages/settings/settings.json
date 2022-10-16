@@ -1,0 +1,49 @@
+{
+  "temperature": {
+    "title": "Temperature Unit",
+    "setting": [
+      {
+        "name": "temp",
+        "value": "Celsius"
+      },
+      {
+        "name": "temp",
+        "value": "Fahrenheit"
+      }
+    ]
+  },
+  "windSpeed": {
+    "title": "Wind Speed Unit",
+    "setting": [
+      {
+        "name": "wind",
+        "value": "km/h"
+      },
+      {
+        "name": "wind",
+        "value": "m/s"
+      },
+      {
+        "name": "wind",
+        "value": "mph"
+      },
+      {
+        "name": "wind",
+        "value": "kn"
+      }
+    ]
+  },
+  "precipitation": {
+    "title": "Precipitation Unit",
+    "setting": [
+      {
+        "name": "precipitation",
+        "value": "Milimeter"
+      },
+      {
+        "name": "precipitation",
+        "value": "Inch"
+      }
+    ]
+  }
+}

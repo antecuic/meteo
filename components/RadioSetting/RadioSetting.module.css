@@ -1,0 +1,25 @@
+.setting {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.choices {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+}
+
+.choice input {
+  margin-right: 0.5rem;
+}

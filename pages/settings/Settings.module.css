@@ -1,0 +1,27 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+}
+
+.content {
+  width: 100%;
+  flex: 3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 0 1rem;
+}
+
+.heading {
+  margin: 3.5rem 0;
+}
+
+.settingsContent {
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
