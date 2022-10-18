@@ -41,7 +41,15 @@ function Sidebar({ favourites, handleStarClick }: Props) {
           className={styles.close}
           onClick={() => setShowSidebar(false)}
         />
-        <div className={styles.heading}>
+        <div className={styles.sidebarLinks}>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Link href="/settings">
+            <a>Settings</a>
+          </Link>
+        </div>
+        <div className={styles.favouritesHeading}>
           <h2>Favourites</h2>
           <p
             className={styles.sort}
@@ -54,7 +62,7 @@ function Sidebar({ favourites, handleStarClick }: Props) {
         </div>
         <div className={styles.favouriteContent}>
           {sortedFavourites.map((city) => (
-            <div key={city.name} className={styles.favourite}>
+            <div key={city.name} className={styles.city}>
               <Link
                 href={`/details?name=${city.name}&longitude=${city.lng}&latitude=${city.lat}`}
               >
