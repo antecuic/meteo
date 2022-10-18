@@ -1,52 +1,52 @@
 {
-  "temperature": {
+  "temperature_unit": {
     "title": "Temperature Unit",
     "setting": [
       {
-        "name": "temp",
-        "value": "Celsius"
+        "name": "temperature_unit",
+        "value": "celsius"
       },
       {
-        "name": "temp",
-        "value": "Fahrenheit"
+        "name": "temperature_unit",
+        "value": "fahrenheit"
       }
     ]
   },
-  "windSpeed": {
+  "windspeed_unit": {
     "title": "Wind Speed Unit",
     "setting": [
       {
-        "name": "wind",
-        "value": "km/h"
+        "name": "windspeed_unit",
+        "value": "kmh"
       },
       {
-        "name": "wind",
-        "value": "m/s"
+        "name": "windspeed_unit",
+        "value": "ms"
       },
       {
-        "name": "wind",
+        "name": "windspeed_unit",
         "value": "mph"
       },
       {
-        "name": "wind",
+        "name": "windspeed_unit",
         "value": "kn"
       }
     ]
   },
-  "precipitation": {
+  "precipitation_unit": {
     "title": "Precipitation Unit",
     "setting": [
       {
-        "name": "precipitation",
-        "value": "Milimeter"
+        "name": "precipitation_unit",
+        "value": "mm"
       },
       {
-        "name": "precipitation",
-        "value": "Inch"
+        "name": "precipitation_unit",
+        "value": "inch"
       }
     ]
   },
-  "timezones": {
+  "timezone": {
     "title": "Timezone",
     "setting": [
       {
@@ -119,7 +119,7 @@
       }
     ]
   },
-  "pastDays": {
+  "past_days": {
     "title": "Past days",
     "setting": [
       {

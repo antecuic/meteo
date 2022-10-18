@@ -6,9 +6,9 @@ import Selector from "@/components/Selector";
 import Button from "@/components/Button";
 import Sidebar from "@/components/Sidebar";
 import useFavourites from "hooks/useFavourites";
+import useAppSettings from "hooks/useAppSettings";
 
 import styles from "./Settings.module.css";
-import useAppSettings from "hooks/useAppSettings";
 
 function Settings() {
   const { favourites, toggleFavourite, clearFavourites } = useFavourites();
@@ -23,28 +23,28 @@ function Settings() {
           <h1 className={styles.heading}>Settings page</h1>
           <div className={styles.settingsContent}>
             <RadioSetting
-              unitKey={SettingKey.temp}
-              checkedSetting={appSettings?.temperature}
+              unitKey={SettingKey.temperature_unit}
+              checkedSetting={appSettings?.temperature_unit}
               updateValue={updateSettings}
             />
             <RadioSetting
-              unitKey={SettingKey.windSpeed}
-              checkedSetting={appSettings?.windSpeed}
+              unitKey={SettingKey.windspeed_unit}
+              checkedSetting={appSettings?.windspeed_unit}
               updateValue={updateSettings}
             />
             <RadioSetting
-              unitKey={SettingKey.precipitation}
-              checkedSetting={appSettings?.precipitation}
+              unitKey={SettingKey.precipitation_unit}
+              checkedSetting={appSettings?.precipitation_unit}
               updateValue={updateSettings}
             />
             <Selector
-              settingKey={SettingKey.timezones}
-              selected={appSettings?.timezones}
+              settingKey={SettingKey.timezone}
+              selected={appSettings?.timezone}
               updateValue={updateSettings}
             />
             <Selector
-              settingKey={SettingKey.pastDays}
-              selected={appSettings?.pastDays}
+              settingKey={SettingKey.past_days}
+              selected={appSettings?.past_days}
               updateValue={updateSettings}
             />
             <div className={styles.buttons}>

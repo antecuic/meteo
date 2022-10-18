@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import settingsJSON from "@/pages/settings/settings.json";
+import settingsJSON from "../../settings.json";
 import { NewSettings, SettingKey } from "utils/applicationSettings";
 
 import styles from "./Selector.module.css";

@@ -1,5 +1,5 @@
 import React from "react";
-import settings from "@/pages/settings/settings.json";
+import settings from "../../settings.json";
 import { SettingKey, NewSettings } from "utils/applicationSettings";
 
 import styles from "./RadioSetting.module.css";
