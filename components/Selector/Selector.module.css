@@ -4,6 +4,13 @@
 
   padding: 1rem;
   border-radius: 8px;
+  appearance: none;
+
+  cursor: pointer;
+}
+
+.selector:focus {
+  outline-color: var(--light-blue);
 }
 
 @media screen and (min-width: 768px) {

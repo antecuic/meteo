@@ -1,26 +1,23 @@
 import React from "react";
 import settings from "@/pages/settings/settings.json";
-import {
-  SettingKey,
-  getSetting,
-  saveSettings,
-} from "utils/applicationSettings";
+import { SettingKey, NewSettings } from "utils/applicationSettings";
 
 import styles from "./RadioSetting.module.css";
 
 interface Props {
   unitKey: SettingKey;
+  checkedSetting?: string;
+  updateValue: (newSetting: NewSettings) => void;
 }
 
-function RadioSetting({ unitKey }: Props) {
+function RadioSetting({ unitKey, checkedSetting, updateValue }: Props) {
   const radios = settings[unitKey];
-  const radioChecked = getSetting(unitKey);
 
   const onCheckboxToggle = ({
     target: { checked, value },
   }: React.ChangeEvent<HTMLInputElement>) => {
     if (checked) {
-      saveSettings({ [unitKey]: value });
+      updateValue({ [unitKey]: value });
     }
   };
 
@@ -34,7 +31,7 @@ function RadioSetting({ unitKey }: Props) {
               type="radio"
               name={name}
               value={value}
-              defaultChecked={value === radioChecked}
+              checked={value === checkedSetting}
               onChange={onCheckboxToggle}
             />
             <label>{value}</label>

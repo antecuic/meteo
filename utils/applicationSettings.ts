@@ -10,7 +10,7 @@ export enum SettingKey {
   pastDays = "pastDays",
 }
 
-interface ApplicationSettings {
+export interface ApplicationSettings {
   temperature: string;
   windSpeed: string;
   precipitation: string;
@@ -18,11 +18,11 @@ interface ApplicationSettings {
   pastDays: string;
 }
 
-interface NewSettings {
+export interface NewSettings {
   [key: string]: string;
 }
 
-const defaultSettings: ApplicationSettings = {
+export const defaultSettings: ApplicationSettings = {
   temperature: settings.temperature.setting[0].value,
   windSpeed: settings.windSpeed.setting[0].value,
   precipitation: settings.precipitation.setting[0].value,

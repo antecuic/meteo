@@ -6,11 +6,21 @@
   background-color: transparent;
   font-size: 18px;
 
+  transition: all 0.2s ease-in-out;
+
   cursor: pointer;
 }
 
 .button:first-of-type {
   margin-right: 2rem;
+}
+
+.button:hover {
+  transform: scale(1.04);
+}
+
+.button:active {
+  background-color: var(--light-blue);
 }
 
 @media screen and (max-width: 425px) {

@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
 import settingsJSON from "@/pages/settings/settings.json";
-import {
-  getSetting,
-  saveSettings,
-  SettingKey,
-} from "utils/applicationSettings";
+import { NewSettings, SettingKey } from "utils/applicationSettings";
 
 import styles from "./Selector.module.css";
 
 interface Props {
   settingKey: SettingKey;
+  selected?: string;
+  updateValue: (newSetting: NewSettings) => void;
 }
 
-function Selector({ settingKey }: Props) {
+function Selector({ settingKey, selected, updateValue }: Props) {
   const [hasMounted, setHasMounted] = useState(false);
   const options = settingsJSON[settingKey];
-  const optionSelected = getSetting(settingKey);
 
   useEffect(() => {
     setHasMounted(true);
@@ -27,12 +24,12 @@ function Selector({ settingKey }: Props) {
   const handleSelectOption = ({
     target: { value },
   }: React.ChangeEvent<HTMLSelectElement>) => {
-    saveSettings({ [settingKey]: value });
+    updateValue({ [settingKey]: value });
   };
 
   return (
     <select
-      defaultValue={optionSelected}
+      value={selected}
       className={styles.selector}
       onChange={handleSelectOption}
     >
