@@ -18,8 +18,6 @@ export const fetchMeteoData = async (params: Params) => {
     fetchUrl.searchParams.set(setting, appSettings[setting]);
   }
 
-  console.log(fetchUrl);
-
   const res = await fetch(fetchUrl.toString().replace(/%2C/g, ","));
 
   const data = await res.json();

@@ -24,14 +24,13 @@ export default function Details() {
     DEFAULT_HOURLY_VARIABLES
   );
   const [currentView, setCurrentView] = useState<CurrentView>("hourly");
-  const [meteoData, setMeteoData] = useState<Data>();
 
   const fetchData = useCallback(async () => {
     const data = await fetchMeteoData({
       ...(router.query as Params),
       [currentView]: variables.join(","),
     });
-    setMeteoData(data);
+    console.log(data);
   }, [variables]);
 
   useEffect(() => {
@@ -103,19 +102,12 @@ export default function Details() {
                 )
               )}
             </div>
-            <p>{meteoData?.latitude}</p>
+            <p className={styles.result}>
+              NOTE: fethed date is logged in console
+            </p>
           </div>
         </div>
       </main>
     </>
   );
 }
-
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//   const { query } = context;
-//   const meteoData = await fetchMeteoData(query as Params);
-
-//   return {
-//     props: { meteoData, city: query as City } as Props,
-//   };
-// };
