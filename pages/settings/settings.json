@@ -45,5 +45,131 @@
         "value": "Inch"
       }
     ]
+  },
+  "timezones": {
+    "title": "Timezone",
+    "setting": [
+      {
+        "name": "America/Anchorage",
+        "value": "America/Anchorage"
+      },
+      {
+        "name": "America/Los_Angeles",
+        "value": "AmericaAnchorage"
+      },
+      {
+        "name": "America/Denver",
+        "value": "America/Denver"
+      },
+      {
+        "name": "America/Chicago",
+        "value": "America/Chicago"
+      },
+      {
+        "name": "America/New_York",
+        "value": "America/New_York"
+      },
+      {
+        "name": "America/Sao_Paulo",
+        "value": "America/Sao_Paulo"
+      },
+      {
+        "name": "GMT+0",
+        "value": "GMT"
+      },
+      {
+        "name": "Automatically detect time zone",
+        "value": "auto"
+      },
+      {
+        "name": "Europe/London",
+        "value": "Europe/London"
+      },
+      {
+        "name": "Europe/Berlin",
+        "value": "Europe/Berlin"
+      },
+      {
+        "name": "Europe/Moscow",
+        "value": "Europe/Moscow"
+      },
+      {
+        "name": "Africa/Cairo",
+        "value": "Africa/Cairo"
+      },
+      {
+        "name": "Asia/Bangkok",
+        "value": "Asia/Bangkok"
+      },
+      {
+        "name": "Asia/Singapore",
+        "value": "Asia/Singapore"
+      },
+      {
+        "name": "Asia/Tokyo",
+        "value": "Asia/Tokyo"
+      },
+      {
+        "name": "Australia/Sydney",
+        "value": "Australia/Sydney"
+      },
+      {
+        "name": "Pacific/Auckland",
+        "value": "Pacific/Auckland"
+      }
+    ]
+  },
+  "pastDays": {
+    "title": "Past days",
+    "setting": [
+      {
+        "name": "0",
+        "value": "0"
+      },
+      {
+        "name": "1",
+        "value": "1"
+      },
+      {
+        "name": "2",
+        "value": "2"
+      },
+      {
+        "name": "3",
+        "value": "3"
+      },
+      {
+        "name": "4",
+        "value": "4"
+      },
+      {
+        "name": "5",
+        "value": "5"
+      },
+      {
+        "name": "6",
+        "value": "6"
+      },
+      {
+        "name": "1 week",
+        "value": "7"
+      },
+      {
+        "name": "2 weeks",
+        "value": "14"
+      },
+      {
+        "name": "1 month",
+        "value": "31"
+      },
+      {
+        "name": "2 months",
+        "value": "61"
+      },
+      {
+        "name": "3 months",
+        "value": "92"
+      }
+    ]
   }
 }

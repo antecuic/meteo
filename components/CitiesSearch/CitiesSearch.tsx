@@ -40,7 +40,7 @@ function CitiesSearch({ favourites, handleStarClick }: Props) {
       {searchResults.length > 0 ? (
         <div className={styles.searchResults}>
           {searchResults.map((city) => (
-            <div className={styles.result}>
+            <div key={city.name} className={styles.result}>
               <Link
                 key={city.name}
                 href={`/details?name=${city.name}&longitude=${city.lng}&latitude=${city.lat}`}

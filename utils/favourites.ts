@@ -31,6 +31,10 @@ export const removeFavourite = (favouriteName: string) => {
   return newFavourites;
 };
 
+export const removeAllFavourites = () => {
+  window.localStorage.removeItem(KEY);
+};
+
 export const isFavourite = (cityName: string) => {
   return (
     getFavourites().findIndex((favourite) => favourite.name === cityName) !== -1

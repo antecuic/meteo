@@ -2,16 +2,20 @@ import settings from "../pages/settings/settings.json";
 
 const KEY = "@settings";
 
-export enum AvailableUnits {
+export enum SettingKey {
   temp = "temperature",
   windSpeed = "windSpeed",
   precipitation = "precipitation",
+  timezones = "timezones",
+  pastDays = "pastDays",
 }
 
 interface ApplicationSettings {
   temperature: string;
   windSpeed: string;
   precipitation: string;
+  timezones: string;
+  pastDays: string;
 }
 
 interface NewSettings {
@@ -22,6 +26,10 @@ const defaultSettings: ApplicationSettings = {
   temperature: settings.temperature.setting[0].value,
   windSpeed: settings.windSpeed.setting[0].value,
   precipitation: settings.precipitation.setting[0].value,
+  timezones:
+    settings.timezones.setting.find((zone) => zone.value === "auto")?.value ||
+    "GMT",
+  pastDays: "0",
 };
 
 export const getSettings = () => {
@@ -36,9 +44,9 @@ export const getSettings = () => {
   }
 };
 
-export const getUnitSetting = (unit: AvailableUnits) => {
+export const getSetting = (key: SettingKey) => {
   const currentSettings = getSettings();
-  return currentSettings?.[unit];
+  return currentSettings?.[key];
 };
 
 export const saveSettings = (newSettings: NewSettings) => {

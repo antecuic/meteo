@@ -1,21 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import settings from "@/pages/settings/settings.json";
 import {
-  AvailableUnits,
-  getSettings,
-  getUnitSetting,
+  SettingKey,
+  getSetting,
   saveSettings,
 } from "utils/applicationSettings";
 
 import styles from "./RadioSetting.module.css";
 
 interface Props {
-  unitKey: AvailableUnits;
+  unitKey: SettingKey;
 }
 
 function RadioSetting({ unitKey }: Props) {
   const radios = settings[unitKey];
-  const radioChecked = getUnitSetting(unitKey);
+  const radioChecked = getSetting(unitKey);
 
   const onCheckboxToggle = ({
     target: { checked, value },
@@ -30,7 +29,7 @@ function RadioSetting({ unitKey }: Props) {
       <p>{radios.title}</p>
       <div className={styles.choices}>
         {radios.setting.map(({ name, value }) => (
-          <div className={styles.choice}>
+          <div key={value} className={styles.choice}>
             <input
               type="radio"
               name={name}
